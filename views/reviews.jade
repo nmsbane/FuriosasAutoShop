@@ -5,6 +5,16 @@ block body
 		h2 Customer reviews
 
 		//- Implement search here
+		form(name="search", method="get", action='/reviews')
+			div.input
+				input(
+					type='text'
+					class="form-control"
+					name='q'
+					placeholder='search'
+				)
+			div.actions
+				input(type="submit", value="search")
 
 		for review in reviews
 			blockquote

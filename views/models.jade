@@ -1,10 +1,17 @@
 extends _shared
 
+
+
 block body
 	.models
 		h2 Models we work on
-
 		//- Implement sorting here
-
+		a(href="/models", class="btn btn-primary", role="button") Sort
+		// button(
+		// 	type='submit'
+		// 	value='click here to sort'
+		// 	class='btn btn-default'
+		// 	onClick="window.location='models';"
+		// )
 		for model in models
 			h4= model

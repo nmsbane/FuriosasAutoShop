@@ -3,11 +3,16 @@ extends _shared
 block body
 	.services
 		h2 Services we provide
-
+		script.
+			var selectd = '#{selected}'
 		//- Implement filtering here
+		select(onchange="location = this.value;")
+			option(value="/services") Select a type
+			option(value="/services?type=repair", selected=(selected == 'repair')) Type repair
+			option(value="/services?type=maintenance", selected=(selected == 'maintenance')) Type maintenance
+			option(value='/services?type=cosmetic', selected=(selected == 'cosmetic')) Type cosmetic
 
 		for service in services
 			h4= service.job
 			p= service.cost
 			p= service.type
-
